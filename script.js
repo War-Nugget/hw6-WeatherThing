@@ -11,6 +11,12 @@ var currentHumidty= $("#humidity");
 var currentWSpeed=$("#wind-speed");
 var currentUvindex= $("#uv-index");
 var sCity=[];
+
+var lon = -1
+var lan = 4
+var len = "" + lon + lan;
+console.log(len)
+
 // searches the city to see if it exists in the entries from the storage==========================================================================
 function find(c){
     for (var i=0; i<sCity.length; i++){
@@ -127,7 +133,7 @@ function forecast(cityid){
 //Adds past searches to history==========================================================================
 function addToList(c){
     var listEl= $("<li>"+c.toUpperCase()+"</li>");
-    $(listEl).attr("class","list-group-item");
+    $(listEl).attr("class","list-group");
     $(listEl).attr("data-value",c.toUpperCase());
     $(".list-group").append(listEl);
 }
